@@ -14,6 +14,7 @@ class ProfileList(APIView):
         serializer = ProfileSerializer(profiles, many=True)
         return Response(serializer.data)
 
+
 class RecipeList(APIView):
     """
     List all profiles
