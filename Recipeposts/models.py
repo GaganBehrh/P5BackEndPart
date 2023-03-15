@@ -33,4 +33,4 @@ class RecipePost(models.Model):
         ordering = ['-created_on']
 
     def __str__(self):
-        return f'{self.id} {self.title}'
+        return f'{self.id} {self.name}'

@@ -42,7 +42,7 @@ class RecipePostDetail(APIView):
             post = RecipePost.objects.get(pk=pk)
             self.check_object_permissions(self.request, post)
             return post
-        except Post.DoesNotExist:
+        except RecipePost().DoesNotExist:
             raise Http404
 
     def get(self, request, pk):
