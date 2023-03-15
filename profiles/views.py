@@ -15,3 +15,9 @@ class ProfileList(APIView):
         return Response(serializer.data)
 
 
+class RecipeList(APIView):
+    
+    def get(self, request):
+        recipes = RecipePost.objects.all()
+        recipeserializer = RecipePostSerializer(recipes, many=True)
+        return Response(recipeserializer.data) 
