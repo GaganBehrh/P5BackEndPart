@@ -1,6 +1,6 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import Profile, RecipePost 
+from .models import Profile
 from .serializers import ProfileSerializer
 
 
@@ -14,10 +14,3 @@ class ProfileList(APIView):
         serializer = ProfileSerializer(profiles, many=True)
         return Response(serializer.data)
 
-
-class RecipeList(APIView):
-    
-    def get(self, request):
-        recipes = RecipePost.objects.all()
-        recipeserializer = RecipePostSerializer(recipes, many=True)
-        return Response(recipeserializer.data) 

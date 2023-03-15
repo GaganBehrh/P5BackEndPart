@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Profile,RecipePost
+from .models import Profile
 
 
 class ProfileSerializer(serializers.ModelSerializer):
@@ -13,15 +13,3 @@ class ProfileSerializer(serializers.ModelSerializer):
         ]
 
 
-class RecipePostSerializer(serializers.ModelSerializer):
-    profile_name = serializers.ReadOnlyField(source='owner.profile.name')
-    profile_content = serializers.ReadOnlyField(source='owner.profile.content')
-    profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
-
-    class Meta:
-        model = RecipePost
-        fields = [
-            'id', 'owner', 'created_on', 'updated_on', 'title',
-            'matter', 'pic'
-        ] 
-		
