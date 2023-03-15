@@ -6,4 +6,5 @@ django-cloudinary-storage==0.3.0
 djangorestframework==3.14.0
 Pillow==9.4.0
 pytz==2022.7.1
+recipes==0.1
 sqlparse==0.4.3
