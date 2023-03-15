@@ -1,6 +1,6 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .models import Profile,RecipePost 
+from .models import Profile, RecipePost 
 from .serializers import ProfileSerializer
 
 
@@ -15,12 +15,3 @@ class ProfileList(APIView):
         return Response(serializer.data)
 
 
-class RecipeList(APIView):
-    """
-    List all profiles
-    No Create view (post method), as profile creation handled by django signals
-    """
-    def get(self, request):
-        recipes = RecipePost.objects.all()
-        recipeserializer = RecipePostSerializer(recipes, many=True)
-        return Response(recipeserializer.data)

@@ -39,6 +39,6 @@ class RecipePost(models.Model):
     )
 
     class Meta:
-        ordering = ['-created_at']
+        ordering = ['-created_on']
 
 
