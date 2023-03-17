@@ -27,7 +27,7 @@ class RecipeCommentList(APIView):
             data=request.data, context={'request': request}
         )
         if serializer.is_valid():
-            serializer.save(owner=request.user)
+            serializer.save(user=request.user)
             return Response(
                 serializer.data, status=status.HTTP_201_CREATED
             )
@@ -43,7 +43,7 @@ class RecipeCommentDetail(APIView):
     def get_object(self, pk):
         try:
             recipecomment = RecipeComment.objects.get(pk=pk)
-            self.check_object_permissions(self.request, post)
+            self.check_object_permissions(self.request, recipecomment)
             return recipecomment
         except RecipeComment().DoesNotExist:
             raise Http404

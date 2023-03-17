@@ -3,10 +3,10 @@ from RecipeComment.models import RecipeComment
 
 
 class RecipeCommentSerializer(serializers.ModelSerializer):
-    user = serializers.ReadOnlyField(source='owner.username')
+    user = serializers.ReadOnlyField(source='user.username')
     is_user = serializers.SerializerMethodField()
-    profile_id = serializers.ReadOnlyField(source='owner.profile.id')
-    profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
+    profile_id = serializers.ReadOnlyField(source='user.profile.id')
+    profile_image = serializers.ReadOnlyField(source='user.profile.image.url')
 
     def validate_pic(self, value):
         if value.size > 2 * 1024 * 1024:
@@ -21,9 +21,9 @@ class RecipeCommentSerializer(serializers.ModelSerializer):
             )
         return value
 
-    def get_is_owner(self, obj):
+    def get_is_user(self, obj):
         request = self.context['request']
-        return request.user == obj.owner
+        return request.user == obj.user
 
     class Meta:
         model = RecipeComment
