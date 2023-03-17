@@ -3,8 +3,8 @@ from RecipeComment.models import RecipeComment
 
 
 class RecipeCommentSerializer(serializers.ModelSerializer):
-    user = serializers.ReadOnlyField(source='user.username')
-    is_user = serializers.SerializerMethodField()
+    owner = serializers.ReadOnlyField(source='user.username')
+    is_owner= serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='user.profile.id')
     profile_image = serializers.ReadOnlyField(source='user.profile.image.url')
 
@@ -21,14 +21,14 @@ class RecipeCommentSerializer(serializers.ModelSerializer):
             )
         return value
 
-    def get_is_user(self, obj):
+    def get_is_owner(self, obj):
         request = self.context['request']
-        return request.user == obj.user
+        return request.user == obj.owner
 
     class Meta:
         model = RecipeComment
         fields = [
-            'id', 'user', 'is_user', 'profile_id',
+            'id', 'owner', 'is_owner', 'profile_id',
             'profile_image', 'comment_created', 'comment_updated',
             'name', 'subject', 'picture'
         ]
