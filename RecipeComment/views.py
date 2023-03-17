@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
 from django.http import Http404
 from rest_framework import status, permissions
 from rest_framework.response import Response
@@ -18,7 +17,7 @@ class RecipeCommentList(APIView):
 
     def get(self, request):
         recipecomments = RecipeComment.objects.all()
-        serializer = wowRecipeCommentSerializer(
+        serializer = RecipeCommentSerializer(
             recipecomments, many=True, context={'request': request}
         )
         return Response(serializer.data)
@@ -35,6 +34,7 @@ class RecipeCommentList(APIView):
         return Response(
             serializer.errors, status=status.HTTP_400_BAD_REQUEST
         )
+
 
 class RecipeCommentDetail(APIView):
     permission_classes = [IsOwnerOrReadOnly]

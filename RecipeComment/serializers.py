@@ -1,9 +1,10 @@
 from rest_framework import serializers
-from Recipeposts.models import RecipePost
+from RecipeComment.models import RecipeComment
 
-class RecipePostSerializer(serializers.ModelSerializer):
-    owner = serializers.ReadOnlyField(source='owner.username')
-    is_ouser = serializers.SerializerMethodField()
+
+class RecipeCommentSerializer(serializers.ModelSerializer):
+    user = serializers.ReadOnlyField(source='owner.username')
+    is_user = serializers.SerializerMethodField()
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.image.url')
 
@@ -25,10 +26,9 @@ class RecipePostSerializer(serializers.ModelSerializer):
         return request.user == obj.owner
 
     class Meta:
-        model = RecipePost
+        model = RecipeComment
         fields = [
-             'id', 'owner', 'is_owner', 'profile_id',
-            'profile_image', 'created_on', 'updated_on',
-            'name', 'matter', 'pic', 'pic_filter'
-           
+            'id', 'user', 'is_user', 'profile_id',
+            'profile_image', 'comment_created', 'comment_updated',
+            'name', 'subject', 'picture'
         ]

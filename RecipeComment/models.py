@@ -1,8 +1,6 @@
 from django.db import models
-
 from django.db import models
 from django.contrib.auth.models import User
-
 
 class RecipeComment(models.Model):
  
@@ -14,9 +12,7 @@ class RecipeComment(models.Model):
     picture = models.ImageField(
         upload_to='images/', default='../default_post_rgq6aq', blank=True
     )
-    picture_filter = models.CharField(
-        max_length=32, choices=image_filter_choices, default='normal'
-    )
+   
 
     class Meta:
         ordering = ['-comment_created']
