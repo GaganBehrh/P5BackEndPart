@@ -46,6 +46,7 @@ REST_USE_JWT = True
 JWT_AUTH_SECURE = True
 JWT_AUTH_COOKIE = 'my-app-auth'
 JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
+JWT_AUTH_SAMESITE = 'None'
 
 REST_AUTH_SERIALIZERS = {
     'USER_DETAILS_SERIALIZER': 'drf_api.serializers.CurrentUserSerializer'
@@ -55,12 +56,12 @@ REST_AUTH_SERIALIZERS = {
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-gsvfl55+x#11#z+sn565bp&@hla3trv0ff0xvd@we-^3#i8u=%'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+ DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', 'p5djangobackend.herokuapp.com']
 CSRF_TRUSTED_ORIGINS = ["https://8000-gaganbehrh-p5backendpar-q27481rnzdr.ws-eu90.gitpod.io "]
 
 
@@ -81,6 +82,8 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
     'cloudinary_storage',
     'django.contrib.staticfiles',
+    'dj_rest_auth.registration',
+    'corsheaders',
     'cloudinary',
     'profiles',
     'Recipeposts',
@@ -90,6 +93,7 @@ INSTALLED_APPS = [
 SITE_ID=1
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -98,7 +102,15 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+if 'CLIENT_ORIGIN' in os.environ:
+    CORS_ALLOWED_ORIGINS = [
+         os.environ.get('CLIENT_ORIGIN')
+     ]
+else:
+    CORS_ALLOWED_ORIGIN_REGEXES = [
+         r"^https://.*\.gitpod\.io$",
+     ]
+CORS_ALLOW_CREDENTIALS = True
 ROOT_URLCONF = 'p5django.urls'
 
 TEMPLATES = [
@@ -129,17 +141,18 @@ WSGI_APPLICATION = 'p5django.wsgi.application'
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
 #}
- if 'DEV' in os.environ:
-     DATABASES = {
+if 'DEV' in os.environ:
+    DATABASES = {
          'default': {
              'ENGINE': 'django.db.backends.sqlite3',
              'NAME': BASE_DIR / 'db.sqlite3',
          }
      }
- else:
-     DATABASES = {
+else:
+    DATABASES = {
          'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
      }
+
 
 
 # Password validation
