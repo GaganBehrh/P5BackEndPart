@@ -6,7 +6,7 @@ from rest_framework.views import APIView
 from .models import RecipePost
 from .serializers import RecipePostSerializer
 from p5django.permissions import IsOwnerOrReadOnly
-from django_filters.rest_framework import DjangoFilterBackend
+
 
 
 class RecipePostList(APIView):
@@ -14,10 +14,7 @@ class RecipePostList(APIView):
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly
     ]
-    queryset = RecipePost.objects.all()
-    serializer_class = RecipePostSerializer
-    filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['name']
+  
     
     
     def get(self, request):
