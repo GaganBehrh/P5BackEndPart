@@ -62,7 +62,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['localhost', 'p5djangobackend.herokuapp.com']
-CSRF_TRUSTED_ORIGINS = ["https://8000-gaganbehrh-p5backendpar-q27481rnzdr.ws-eu90.gitpod.io "]
+CSRF_TRUSTED_ORIGINS = ["https://8000-gaganbehrh-p5backendpar-q27481rnzdr.ws-eu90.gitpod.io"]
 
 
 # Application definition
