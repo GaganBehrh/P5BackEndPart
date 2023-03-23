@@ -82,7 +82,6 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
     'cloudinary_storage',
     'django.contrib.staticfiles',
-    'dj_rest_auth.registration',
     'corsheaders',
     'cloudinary',
     'profiles',
