@@ -87,6 +87,7 @@ INSTALLED_APPS = [
     'profiles',
     'Recipeposts',
     'RecipeComment',
+    'utensils',
     'rest_framework'
 ]
 SITE_ID=1
