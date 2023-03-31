@@ -61,8 +61,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['localhost', 'p5djangobackend.herokuapp.com']
-CSRF_TRUSTED_ORIGINS = ["https://8000-gaganbehrh-p5backendpar-q27481rnzdr.ws-eu90.gitpod.io"]
+ALLOWED_HOSTS = ['localhost', os.environ.get("ALLOWED_HOST")]
+
+#CSRF_TRUSTED_ORIGINS = ["https://8000-gaganbehrh-p5backendpar-q27481rnzdr.ws-eu90.gitpod.io"]
 
 
 # Application definition
