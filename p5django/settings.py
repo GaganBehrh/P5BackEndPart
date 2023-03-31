@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import re
 from pathlib import Path
 import os
 import dj_database_url
@@ -56,12 +56,12 @@ REST_AUTH_SERIALIZERS = {
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['localhost', 'p5djangobackend.herokuapp.com']
+ALLOWED_HOSTS = ['localhost',os.environ.get("ALLOWED_HOST")]
 
 #CSRF_TRUSTED_ORIGINS = ["https://8000-gaganbehrh-p5backendpar-q27481rnzdr.ws-eu90.gitpod.io"]
 
@@ -108,10 +108,11 @@ if 'CLIENT_ORIGIN' in os.environ:
     CORS_ALLOWED_ORIGINS = [
          os.environ.get('CLIENT_ORIGIN')
      ]
-else:
+if 'CLIENT_ORIGIN_DEV' in os.environ:
+    extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
     CORS_ALLOWED_ORIGIN_REGEXES = [
-         r"^https://.*\.gitpod\.io$",
-     ]
+        rf"{extracted_url}(eu|us)\d+\w\.gitpod\.io$",
+    ]
 CORS_ALLOW_CREDENTIALS = True
 ROOT_URLCONF = 'p5django.urls'
 
