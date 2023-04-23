@@ -30,5 +30,4 @@ class RecipePostSerializer(serializers.ModelSerializer):
              'id', 'owner', 'is_owner', 'profile_id',
             'profile_image', 'created_on', 'updated_on',
             'name', 'matter', 'pic', 'pic_filter'
-           
         ]
