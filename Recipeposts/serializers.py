@@ -10,11 +10,11 @@ class RecipePostSerializer(serializers.ModelSerializer):
     def validate_pic(self, value):
         if value.size > 2 * 1024 * 1024:
             raise serializers.ValidationError('Image size larger than 2MB!')
-        if value.height > 4096:
+        if value.image.height > 4096:
             raise serializers.ValidationError(
                 'Picture height larger than 4096px!'
             )
-        if value.width > 4096:
+        if value.image.width > 4096:
             raise serializers.ValidationError(
                 'Picture width larger than 4096px!'
             )
