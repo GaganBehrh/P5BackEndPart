@@ -62,9 +62,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEV' in os.environ
 
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', os.environ.get("ALLOWED_HOST")]
+ALLOWED_HOSTS = ['localhost', os.environ.get("8000-gaganbehrh-p5backendpar-q27481rnzdr.ws-eu97.gitpod.io")]
 # 
 CSRF_TRUSTED_ORIGINS = ["https://3000-gaganbehrh-p5frontendpa-q863naqbl88.ws-eu95.gitpod.io/", 'https://p5frontend.herokuapp.com/']
 
