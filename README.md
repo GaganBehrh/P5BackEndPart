@@ -1,108 +1,69 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome Gagi Behrh,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## BackEnd for ReciBook
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+This project provides the backend for the Recibook. It has different models such as Recipeposts, Recipecomments etc which can be used by the front end¨for data retrieval.This project provides the backend api for the front end.
 
-## Gitpod Reminders
+## Database Model
+![Database Model](media/P5%20Database%20Model.png)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+## Manual Testing for Back-End
+User stories:
+* Creation of the posts: As a developer I can create the posts and receive it in the my backend Recipeposts model
+  * Result:Pass, I was able to create a post and was also found in the backend
 
-A blue button should appear to click: _Make Public_,
+* Editing of the posts:As a developer I can edit my posts and see those changes in the backend as well
+  * Result:Pass, i could see the relevant changes in the backend
 
-Another blue button should appear to click: _Open Browser_.
+* Deleting of the posts: As a developer I can delete the posts and found these posts no more in the backend section
+  * Result:Pass, I was able to delete a post and this recipes/post were also not found in the backend
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* Receiving of all Recipes from the backend: As a developer, I was able to receive all the recipes from the backend
+  * Result:Pass, it was possible to receive all the recipesfrom the backend
 
-A blue button should appear to click: _Make Public_,
+* Signup: As a developer i could signup and find the same user in the backend
+  * Result:Pass, this was posible to find the same user in the backend as well
 
-Another blue button should appear to click: _Open Browser_.
+* Signin: As a developer, i could sign in and and access the relevant data from the backend
+  * Result:Pass, i was able to signin and acess the data from the backend 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
+## Setup 
+Making a Local Clone
+Log in to GitHub and locate the GitHub Repository Under the repository name, click "Clone or download". To clone the repository using HTTPS, under "Clone with HTTPS", copy the link. Open Git Bash Change the current working directory to the location where you want the cloned directory to be made. Type git clone, and then paste the URL you copied in Step 3. $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY Press Enter. Your local clone will be created. $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+Cloning into CI-Clone... remote: Counting objects: 10, done. remote: Compressing objects: 100% (8/8), done. remove: Total 10 (delta 1), reused 10 (delta 1) Unpacking objects: 100% (10/10), done. Running it from the github
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+After cloning the repo please run the following command to include all the neccesary apps in requirement.txt
 
-------
+pip install -r requirements.txt
 
-## Release History
+and include the env.py file which should look like this and the user has to fill in these values
+emote Heroku Deployment:
+Create an account at Heroku.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+Download CLI here.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+Open up CMD (Windows) or Terminal (MacOS) and type the following and follow the instructions that appear.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+heroku login Create a new Heroku app using the following code in your terminal: heroku create app-name-here With the Heroku app name you just created, modified the production.py file in the settings folder and update the following: ALLOWED_HOSTS = ['your-app-name.herokuapp.com', '127.0.0.1', 'localhost'] Open the Heroku apps webpage and click the app you created in Step 4.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+Navigate to the Settings tab on the top horizontal bar, we will be adding the required environment variables here.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+Click the 'Reveal Config Vars' button and add the below variables for the backend:
+![Heroku vars](media/Heroku%20vars.png)
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+and the env.py file for the backend can look like this
+![env.py parameteres](media/env%20example.png)
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+### API testing
+- As I have created several posts i am able to call my api and all those posts from api and and read them
+- As i have several posts in backend API I am able to call them view (in the view recipe, once i am logged in) them as well 
+  as edit them from my api
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
