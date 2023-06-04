@@ -9,38 +9,37 @@ This project provides the backend django-api for Recibook. It has different mode
 
 ## Manual Testing for Back-End
 * Creation of the posts: As a developer I can create the posts and receive it in the my backend 
-  * Result:Pass, I was able to create a post and was also found in the backend
+   * Result:Pass, I was able to create a post and was also found in the backend
 
 * Editing of the posts:As a developer I can edit my posts and see those changes in the backend as well
-  * Result:Pass, i could edit the recipes and see the relevant changes in the backend
+   * Result:Pass, i could edit the recipes and see the relevant changes in the backend
 
 * Deleting of the posts: As a developer I can delete the posts and found these posts no more in the backend section
-  * Result:Pass, I was able to delete a post and this recipes/post were also not found in the backend
+   * Result:Pass, I was able to delete a post and this recipes/post were also not found in the backend
 
 * Viewing of all Recipes from the backend: As a developer, I was able to receive all the recipes from the backend
-  * Result:Pass, it was possible to receive all the recipes from the backend
+   * Result:Pass, it was possible to receive all the recipes from the backend
 
 * Creation of the comments: As a developer I can create the comments and receive it in the my backend 
-  * Result:Pass, I was able to create comments and was also found in the backend
+   * Result:Pass, I was able to create comments and was also found in the backend
 
 * Editing of the posts:As a developer I can edit my comments and see those changes in the backend as well
-  * Result:Pass, i could edit my comments and see the relevant changes in the backend
+   * Result:Pass, i could edit my comments and see the relevant changes in the backend
 
 * Deleting of the posts: As a developer I can delete the comments and found these comments no more in the backend section
-  * Result:Pass, I was able to delete a comment and this comments were also not found in the backend
+   * Result:Pass, I was able to delete a comment and this comments were also not found in the backend
 
 * Viewing of all Comments from the backend: As a developer, I was able to receive all the comments from the backend
-  * Result:Pass, it was possible to receive all the comments from the backend
+   * Result:Pass, it was possible to receive all the comments from the backend
 
 * Viewing of all profiles from the backend: As a developer, I was able to receive all the profiles from the backend
-  * Result:Pass, it was possible to receive all the profiles from the backend
+   * Result:Pass, it was possible to receive all the profiles from the backend
 
 * Signup: As a developer i could signup and find the same user in the backend
-  * Result:Pass, this was posible to find the same user in the backend as well
+   * Result:Pass, this was posible to find the same user in the backend as well
 
 * Signin: As a developer, i could sign in and and access the relevant data from the backend
-  * Result:Pass, i was able to signin and acess the data from the backend 
-
+   * Result:Pass, i was able to signin and acess the data from the backend 
 
 ## Setup 
 * Making a Local Clone
