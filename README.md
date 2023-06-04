@@ -81,28 +81,28 @@ pip install -r requirements.txt
   * Result:Pass, I was able to create the posts and find that data in the django-api
 
 * As a user/developer I am able to edit the recipes and post those changes in the backend.
- * Result:Pass, I was able to edit the recipes and find those changes in the django-api 
+  * Result:Pass, I was able to edit the recipes and find those changes in the django-api 
 
 * As a user/developer I am able to delete those recipes and find them no more in the backend.
- * Result:Pass, I was able to delete the recipes and find those recipes no more in the django-api 
+  * Result:Pass, I was able to delete the recipes and find those recipes no more in the django-api 
 
 * As a user/developer I am able to view the recipes and find them in the django-api as well.
- * Result:Pass,I was able to view the recipes and find them in the backend as well.
+  * Result:Pass,I was able to view the recipes and find them in the backend as well.
 
 * As a user/developer I am able to create the comments and post it in the backend.
- * Result:Pass, I was able to create the comments and find that data in the django-api.
+  * Result:Pass, I was able to create the comments and find that data in the django-api.
 
 * As a user/developer I am able to edit the comments and post those changes in the backend.
- * Result:Pass, I was able to edit the comments and find those changes in the django-api as well as see those chanes in the frontend.
+  * Result:Pass, I was able to edit the comments and find those changes in the django-api as well as see those chanes in the frontend.
 
 * As a user/developer I am able to delete those comments and find them no more in the backend.
- * Result:Pass, I was able to delete the comments and find those recipes no more in the django-api 
+  * Result:Pass, I was able to delete the comments and find those recipes no more in the django-api 
 
 * As a user/developer I am able to view the comments and find them in the django-api as well.
- * Result:Pass,I was able to view the comments and find them in the backend as well.
+  * Result:Pass,I was able to view the comments and find them in the backend as well.
 
 * As a user/developer I am able to view the profiles and find them in the django-api as well.
- * Result:Pass,I was able to view the profiles and find them in the backend as well.
+  * Result:Pass,I was able to view the profiles and find them in the backend as well.
 
 
 
