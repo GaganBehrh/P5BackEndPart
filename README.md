@@ -2,7 +2,7 @@
 
 ## BackEnd for ReciBook
 
-This project provides the backend for the Recibook. It has different models such as Recipeposts, Recipecomments etc which can be used by the front end¨for data retrieval.This project provides the backend api for the front end.
+This project provides the backend for the Recibook. It has different models such as Recipeposts, Recipecomments,profiles etc which can be used by the front end¨for data retrieval.This project provides the backend api for the front end.
 
 ## Database Model
 ![Database Model](media/P5%20Database%20Model.png)
@@ -30,39 +30,71 @@ User stories:
 
 
 ## Setup 
-Making a Local Clone
-Log in to GitHub and locate the GitHub Repository Under the repository name, click "Clone or download". To clone the repository using HTTPS, under "Clone with HTTPS", copy the link. Open Git Bash Change the current working directory to the location where you want the cloned directory to be made. Type git clone, and then paste the URL you copied in Step 3. $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY Press Enter. Your local clone will be created. $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+* Making a Local Clone
+* Log in to GitHub and locate the GitHub Repository Under the repository name, click "Clone or download". 
 
-Cloning into CI-Clone... remote: Counting objects: 10, done. remote: Compressing objects: 100% (8/8), done. remove: Total 10 (delta 1), reused 10 (delta 1) Unpacking objects: 100% (10/10), done. Running it from the github
+* To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
 
-After cloning the repo please run the following command to include all the neccesary apps in requirement.txt
+* Open Git Bash Change the current working directory to the location where you want the cloned directory to be made. 
 
+* Type git clone, and then paste the URL you copied in Step 3. $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY Press Enter. Your local clone will be created. $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+
+* Cloning into CI-Clone... remote: Counting objects: 10, done. remote: Compressing objects: 100% (8/8), done. remove: Total 10 (delta 1), reused 10 (delta 1) Unpacking objects: 100% (10/10), done. Running it from the github
+
+* After cloning the repo please run the following command to include all the neccesary apps in requirement.txt
 pip install -r requirements.txt
 
-and include the env.py file which should look like this and the user has to fill in these values
-emote Heroku Deployment:
-Create an account at Heroku.
 
-Download CLI here.
 
-Open up CMD (Windows) or Terminal (MacOS) and type the following and follow the instructions that appear.
+### Remote Heroku Deployment:
+* Create an account at Heroku.
 
-heroku login Create a new Heroku app using the following code in your terminal: heroku create app-name-here With the Heroku app name you just created, modified the production.py file in the settings folder and update the following: ALLOWED_HOSTS = ['your-app-name.herokuapp.com', '127.0.0.1', 'localhost'] Open the Heroku apps webpage and click the app you created in Step 4.
+* Download CLI here.
+
+* Open up CMD (Windows) or Terminal (MacOS) and type the following and follow the instructions that appear.
+
+* heroku login Create a new Heroku app using the following code in your terminal: heroku create app-name-here With the Heroku app name you just created, modified the production.py file in the settings folder and update the following: ALLOWED_HOSTS = ['your-app-name.herokuapp.com', '127.0.0.1', 'localhost'] Open the Heroku apps webpage and click the app you created in Step 4.
+
 
 Navigate to the Settings tab on the top horizontal bar, we will be adding the required environment variables here.
+![eny.py file image](media/env%20example.png)
+
 
 Click the 'Reveal Config Vars' button and add the below variables for the backend:
 ![Heroku vars](media/Heroku%20vars.png)
 
+You can deploy it using the Deploy option and carry out the build like this!
+[Build pic](media/Build%20heroku%20pic.png)
 
-and the env.py file for the backend can look like this
-![env.py parameteres](media/env%20example.png)
+
 
 ### API testing
-- As I have created several posts i am able to call my api and all those posts from api and and read them
-- As i have several posts in backend API I am able to call them view (in the view recipe, once i am logged in) them as well 
-  as edit them from my api
+* As a user/developer I am able to create the recipes and post it in the backend.
+ * Result:Pass, I was able to create the posts and find that data in the django-api as well as see them in the frontend
 
+* As a user/developer I am able to edit the recipes and post those changes in the backend.
+ * Result:Pass, I was able to edit the recipes and find those changes in the django-api as well as see those chanes in the frontend.
+
+* As a user/developer I am able to delete those recipes and find them no more in the backend.
+ * Result:Pass, I was able to delete the recipes and find those recipes no more in the django-api as well as they were not found in the front end.
+
+* As a user/developer I am able to view the recipes and find them in the django-api as well.
+ * Result:Pass,I was able to view the recipes and find them in the backend as well.
+
+* As a user/developer I am able to create the comments and post it in the backend.
+ * Result:Pass, I was able to create the comments and find that data in the django-api as well as see them in the frontend.
+
+* As a user/developer I am able to edit the comments and post those changes in the backend.
+ * Result:Pass, I was able to edit the comments and find those changes in the django-api as well as see those chanes in the frontend.
+
+* As a user/developer I am able to delete those comments and find them no more in the backend.
+ * Result:Pass, I was able to delete the comments and find those recipes no more in the django-api as well as they were not found in the front end.
+
+* As a user/developer I am able to view the comments and find them in the django-api as well.
+ * Result:Pass,I was able to view the comments and find them in the backend as well.
+ 
+* As a user/developer I am able to view the profiles and find them in the django-api as well.
+ * Result:Pass,I was able to view the profiles and find them in the backend as well.
 
 
 
