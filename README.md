@@ -104,6 +104,7 @@ pip install -r requirements.txt
 * As a user/developer I am able to view the profiles and find them in the django-api as well.
   * Result:Pass,I was able to view the profiles and find them in the backend as well.
 
-
+## Acknowledgements and Credits
+Mentor and Tutor support Media Info Inspired by "Moments App"
 
 
