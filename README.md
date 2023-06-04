@@ -9,7 +9,7 @@ This project provides the backend django-api for Recibook. It has different mode
 
 ## Manual Testing for Back-End
 * Creation of the posts: As a developer I can create the posts and receive it in the my backend 
-   * Result:Pass, I was able to create a post and was also found in the backend
+  * Result:Pass, I was able to create a post and was also found in the backend
 
 * Editing of the posts:As a developer I can edit my posts and see those changes in the backend as well
    * Result:Pass, i could edit the recipes and see the relevant changes in the backend
@@ -78,7 +78,7 @@ pip install -r requirements.txt
 
 ### API testing
 * As a user/developer I am able to create the recipes and post it in the backend.
- * Result:Pass, I was able to create the posts and find that data in the django-api
+  * Result:Pass, I was able to create the posts and find that data in the django-api
 
 * As a user/developer I am able to edit the recipes and post those changes in the backend.
  * Result:Pass, I was able to edit the recipes and find those changes in the django-api 
